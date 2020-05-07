@@ -115,10 +115,11 @@
 
     p,h1 {
         text-align: center;
-        transition: transform 1.0s;
+        transition: all 1.0s;
 
         &:hover {
             transform: scale(1.3);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
         }
     }
 
@@ -216,3 +217,33 @@
 }
 
 
+
+
+// Contact Me Page!
+
+main {
+    .card-form {
+        transition: all 1s;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    main {
+        .card-form {
+            max-width: 90%;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    main {
+        .card-form {
+            max-width: 75%;
+        }
+    }
+}
