@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#landing-jumbo {
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, black, rgba(0, 0, 0, 0.6)), url("../resources/landing.jpg");
+  background-position: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+#landing-jumbo h1, #landing-jumbo p {
+  font-family: "Dosis", sans-serif;
+}
+#landing-jumbo p {
+  animation: fadein 0.7s linear;
+}
+#landing-jumbo h4 {
+  font-family: "Indie Flower", cursive;
+  font-size: 2em;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadein 0.7s linear 0.7s forwards;
+}
+#landing-jumbo .btn {
+  font-weight: bold;
+  color: #dc3545;
+  opacity: 0;
+  animation: fadein 0.6s linear 1.4s forwards;
+}
+#landing-jumbo .btn:hover {
+  color: #FFF;
+}
+#landing-jumbo p {
+  font-size: 1.8em;
+}
+#landing-jumbo p .myname {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+#landing-jumbo p .myname:hover {
+  color: steelblue;
+  transition: all 1s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.card {
+  perspective: 1000px;
+  background-color: transparent;
+}
+.card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card .card-img, .card .card-img-top {
+  height: 200px;
+}
+
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .card .card-img, .card .card-img-top {
+    height: 10em;
+  }
+}
+#about-jumbo {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("../resources/about-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#about-jumbo p, #about-jumbo h1 {
+  text-align: center;
+  transition: transform 1s;
+}
+#about-jumbo p:hover, #about-jumbo h1:hover {
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  #about-jumbo {
+    padding: 100px;
+  }
+}
+@media (min-width: 769px) {
+  #about-jumbo {
+    padding: 120px;
+  }
+}
+.about-myname {
+  font-weight: bold;
+  transition: all 0.6s;
+}
+.about-myname:hover {
+  color: #004BAA;
+}
+
+.secondsec {
+  position: relative;
+}
+.secondsec .loader {
+  border: 10px solid #f3f3f3;
+  /* Light grey */
+  border-top: 10px solid #000;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  position: absolute;
+  left: 45%;
+  top: 6%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: spin 5s linear forwards;
+}
+.secondsec .row {
+  opacity: 0;
+  animation: fadein 1s linear 4.5s forwards;
+}
+
+.about-footer {
+  background-color: #343a40;
+  padding: 0.5em;
+}
+.about-footer .lead {
+  font-size: 0.8em;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.07em;
+}
+.about-footer a {
+  color: #FFF;
+}
+.about-footer .fab {
+  font-size: 2em;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  95% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
