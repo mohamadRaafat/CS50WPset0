@@ -7,7 +7,7 @@
 }
 
 #landing-jumbo {
-  /* height: 100vh; */
+  height: 100vh;
   background-image: linear-gradient(to bottom right, black, rgba(0, 0, 0, 0.6)), url("../resources/landing.jpg");
   background-position: center;
   text-align: center;
