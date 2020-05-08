@@ -247,3 +247,34 @@ main {
         }
     }
 }
+
+
+// PROJECTS PAGE
+
+
+@media (min-width: 769px) {
+    main {
+        #projects-accordion {
+            max-width: 70%;
+            margin: 85px auto;
+            
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    main {
+        #projects-accordion {
+            margin: 81px auto;
+
+        }
+    }
+}
+
+main {
+    ul {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
