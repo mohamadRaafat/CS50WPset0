@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
+h1, h3, h4, p {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 #landing-jumbo{
 
@@ -213,6 +216,31 @@
     100%  {
         position: absolute;
         opacity: 0;
+    }
+}
+
+
+.container {
+    .carousel {
+        .alametElSlide {
+            background-color: #000;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: rgb(214, 214, 214);
+            width: 5%;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+
+    .container {
+        .carousel {
+            max-width: 50%;
+            margin: 0 auto;
+        }
+        
     }
 }
 
