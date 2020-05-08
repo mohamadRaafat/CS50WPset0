@@ -1,8 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import "./base";
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
-h1, h3, h4, p, p>span {
+h1,
+h3,
+h4,
+p,
+p>span {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -16,31 +27,40 @@ h1, h3, h4, p, p>span {
     background-repeat: no-repeat;
 }
 
-#landing-jumbo{
+#landing-jumbo {
 
     height: 100vh;
-    background-image:linear-gradient(to bottom right, rgba(0,0,0, 1), rgba(0,0,0, 0.6)), url("../resources/landing.jpg");
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.6))), url("../resources/landing.jpg");
+    background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6)), url("../resources/landing.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6)), url("../resources/landing.jpg");
     @extend %backgroundimg;
     background-repeat: repeat;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
-    h1, p {
+    h1,
+    p {
         font-family: 'Dosis',
             sans-serif;
     }
 
     p {
+        -webkit-animation: fadein 0.7s linear;
         animation: fadein 0.7s linear;
     }
-    
+
     h4 {
         font-family: 'Indie Flower',
-        cursive;
+            cursive;
         font-size: 2.0em;
         font-weight: bold;
         opacity: 0;
+        -webkit-animation: fadein 0.7s linear 0.7s forwards;
         animation: fadein 0.7s linear 0.7s forwards;
     }
 
@@ -48,7 +68,9 @@ h1, h3, h4, p, p>span {
         font-weight: bold;
         color: #dc3545;
         opacity: 0;
+        -webkit-animation: fadein 0.6s linear 1.4s forwards;
         animation: fadein 0.6s linear 1.4s forwards;
+
         &:hover {
             color: $white;
         }
@@ -63,6 +85,8 @@ h1, h3, h4, p, p>span {
 
             &:hover {
                 color: steelblue;
+                -webkit-transition: all 1s;
+                -o-transition: all 1s;
                 transition: all 1s;
             }
 
@@ -73,10 +97,22 @@ h1, h3, h4, p, p>span {
 }
 
 
-@keyframes fadein{
+@-webkit-keyframes fadein {
     0% {
         opacity: 0;
     }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
     100% {
         opacity: 1;
     }
@@ -88,6 +124,7 @@ h1, h3, h4, p, p>span {
 
 
 .card {
+    -webkit-perspective: 1000px;
     perspective: 1000px;
     background-color: transparent;
 
@@ -96,39 +133,59 @@ h1, h3, h4, p, p>span {
         width: 100%;
         height: 100%;
         text-align: center;
+        -webkit-transition: -webkit-transform 0.8s;
+        transition: -webkit-transform 0.8s;
+        -o-transition: transform 0.8s;
         transition: transform 0.8s;
+        transition: transform 0.8s, -webkit-transform 0.8s;
+        -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
     }
 
-    .card-img,.card-img-top {
+    .card-img,
+    .card-img-top {
         height: 200px;
     }
 
 }
 
 .card:hover .flip-card-inner {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
 @media (max-width: 768px) {
     .card {
-        .card-img, .card-img-top {
+
+        .card-img,
+        .card-img-top {
             height: 10em
         }
     }
 }
 
 #about-jumbo {
-    background-image:linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
-    url("../resources/about-background.jpg");
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.5))),
+        url("../resources/about-background.jpg");
+    background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+        url("../resources/about-background.jpg");
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+        url("../resources/about-background.jpg");
     @extend %backgroundimg;
     background-size: cover;
 
-    p,h1 {
+    p,
+    h1 {
         text-align: center;
+        -webkit-transition: all 1.0s;
+        -o-transition: all 1.0s;
         transition: all 1.0s;
+
         &:hover {
+            -webkit-transform: scale(1.15);
+            -ms-transform: scale(1.15);
             transform: scale(1.15);
+            -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
             box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
         }
     }
@@ -139,9 +196,11 @@ h1, h3, h4, p, p>span {
 @media (max-width: 768px) {
     #about-jumbo {
         padding: 100px;
+
         h1 {
             font-size: 2.2em;
         }
+
         p {
             font-size: 1.0em;
         }
@@ -157,7 +216,10 @@ h1, h3, h4, p, p>span {
 
 .about-myname {
     font-weight: bold;
+    -webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
     transition: all 0.6s;
+
     &:hover {
         color: #004BAA;
     }
@@ -179,13 +241,16 @@ h1, h3, h4, p, p>span {
         left: 45%;
         top: 6%;
         -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        -webkit-animation: spin 5s linear forwards;
         animation: spin 5s linear forwards;
 
     }
 
     .row {
         opacity: 0;
+        -webkit-animation: fadein 1s linear 4.5s forwards;
         animation: fadein 1s linear 4.5s forwards;
     }
 
@@ -206,6 +271,7 @@ h1, h3, h4, p, p>span {
 
     a {
         color: $white;
+
         &:hover {
             color: rgb(92, 92, 206);
         }
@@ -219,17 +285,40 @@ h1, h3, h4, p, p>span {
 
 
 
-@keyframes spin {
+@-webkit-keyframes spin {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 
     95% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
         opacity: 0;
     }
-    
-    100%  {
+
+    100% {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+
+
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    95% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+
+    100% {
         position: absolute;
         opacity: 0;
     }
@@ -241,6 +330,7 @@ h1, h3, h4, p, p>span {
         .alametElSlide {
             background-color: $black;
         }
+
         .carousel-control-prev,
         .carousel-control-next {
             background-color: rgb(214, 214, 214);
@@ -256,7 +346,7 @@ h1, h3, h4, p, p>span {
             max-width: 50%;
             margin: 0 auto;
         }
-        
+
     }
 }
 
@@ -267,9 +357,15 @@ h1, h3, h4, p, p>span {
 
 main {
     .card-form {
+        -webkit-transition: all 1s;
+        -o-transition: all 1s;
         transition: all 1s;
+
         &:hover {
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
             transform: scale(1.1);
+            -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
             box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
         }
     }
@@ -301,8 +397,9 @@ main {
         #projects-accordion {
             max-width: 70%;
             margin: 20px auto;
-            
+
         }
+
         .table-projects {
             max-width: 66%;
             margin: 0 auto
@@ -317,6 +414,7 @@ main {
             margin: 30px auto;
 
         }
+
         .table-projects {
             max-width: 95%;
             margin: 0 auto
@@ -329,10 +427,9 @@ ul li {
 }
 
 main {
-    
+
     .table-projects {
         border: 2px solid #F7F7F7;
         border-top: 2px solid #F7F7F7s;
     }
 }
-
