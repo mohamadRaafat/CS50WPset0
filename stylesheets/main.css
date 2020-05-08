@@ -6,14 +6,23 @@
   box-sizing: border-box;
 }
 
-h1, h3, h4, p {
+h1, h3, h4, p, p > span {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+[href="index.html"] {
+  letter-spacing: 0.06em;
+}
+
+#about-jumbo, #landing-jumbo {
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #landing-jumbo {
   height: 100vh;
   background-image: linear-gradient(to bottom right, black, rgba(0, 0, 0, 0.6)), url("../resources/landing.jpg");
-  background-position: center;
+  background-repeat: repeat;
   text-align: center;
   display: flex;
   align-items: center;
@@ -87,8 +96,6 @@ h1, h3, h4, p {
 }
 #about-jumbo {
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("../resources/about-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 #about-jumbo p, #about-jumbo h1 {
@@ -154,6 +161,9 @@ h1, h3, h4, p {
 .about-footer a {
   color: #FFF;
 }
+.about-footer a:hover {
+  color: #5c5cce;
+}
 .about-footer .fab {
   font-size: 2em;
 }
@@ -207,16 +217,29 @@ main .card-form:hover {
 @media (min-width: 769px) {
   main #projects-accordion {
     max-width: 70%;
-    margin: 85px auto;
+    margin: 20px auto;
+  }
+  main .table-projects {
+    max-width: 66%;
+    margin: 0 auto;
   }
 }
 @media (max-width: 768px) {
   main #projects-accordion {
-    margin: 81px auto;
+    margin: 30px auto;
+  }
+  main .table-projects {
+    max-width: 95%;
+    margin: 0 auto;
   }
 }
-main ul {
+ul li {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main .table-projects {
+  border: 2px solid #F7F7F7;
+  border-top: 2px solid #F7F7F7s;
 }
 
 /*# sourceMappingURL=main.css.map */

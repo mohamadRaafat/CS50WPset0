@@ -1,18 +1,27 @@
 @import "./base";
-@import "./components";
-@import "./layout";
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
-h1, h3, h4, p {
+h1, h3, h4, p, p>span {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+[href="index.html"] {
+    letter-spacing: 0.06em;
+}
+
+
+%backgroundimg {
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #landing-jumbo{
 
     height: 100vh;
     background-image:linear-gradient(to bottom right, rgba(0,0,0, 1), rgba(0,0,0, 0.6)), url("../resources/landing.jpg");
-    background-position: center;
+    @extend %backgroundimg;
+    background-repeat: repeat;
     text-align: center;
     display: flex;
     align-items: center;
@@ -41,7 +50,7 @@ h1, h3, h4, p {
         opacity: 0;
         animation: fadein 0.6s linear 1.4s forwards;
         &:hover {
-            color: #FFF;
+            color: $white;
         }
     }
 
@@ -112,8 +121,7 @@ h1, h3, h4, p {
 #about-jumbo {
     background-image:linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
     url("../resources/about-background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend %backgroundimg;
     background-size: cover;
 
     p,h1 {
@@ -156,7 +164,7 @@ h1, h3, h4, p {
     .loader {
         border: 10px solid #f3f3f3;
         /* Light grey */
-        border-top: 10px solid #000;
+        border-top: 10px solid $black;
         /* Blue */
         border-radius: 50%;
         width: 120px;
@@ -192,7 +200,10 @@ h1, h3, h4, p {
     }
 
     a {
-        color: #FFF;
+        color: $white;
+        &:hover {
+            color: rgb(92, 92, 206);
+        }
     }
 
     .fab {
@@ -223,7 +234,7 @@ h1, h3, h4, p {
 .container {
     .carousel {
         .alametElSlide {
-            background-color: #000;
+            background-color: $black;
         }
         .carousel-control-prev,
         .carousel-control-next {
@@ -284,8 +295,12 @@ main {
     main {
         #projects-accordion {
             max-width: 70%;
-            margin: 85px auto;
+            margin: 20px auto;
             
+        }
+        .table-projects {
+            max-width: 66%;
+            margin: 0 auto
         }
     }
 }
@@ -294,15 +309,25 @@ main {
 @media (max-width: 768px) {
     main {
         #projects-accordion {
-            margin: 81px auto;
+            margin: 30px auto;
 
+        }
+        .table-projects {
+            max-width: 95%;
+            margin: 0 auto
         }
     }
 }
 
+ul li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 main {
-    ul {
-        font-family: Arial, Helvetica, sans-serif;
+    
+    .table-projects {
+        border: 2px solid #F7F7F7;
+        border-top: 2px solid #F7F7F7s;
     }
 }
 
